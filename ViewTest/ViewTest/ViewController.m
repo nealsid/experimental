@@ -7,16 +7,24 @@
 //
 
 #import "ViewController.h"
+#import "SuperCoolView.h"
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UISlider *fontSizeSlider;
+@property (weak, nonatomic) SuperCoolView* superCoolView;
 @end
 
 @implementation ViewController
 
+- (IBAction)sliderValueChanged:(id)sender {
+  [self.superCoolView setFontSize:[self.fontSizeSlider value]];
+  [self.superCoolView setNeedsDisplay];
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
+  self.superCoolView = [self.view subviews][0];
 }
 
 - (void)didReceiveMemoryWarning {

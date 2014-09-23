@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+FOUNDATION_EXPORT NSString* const kTrebleClef;
+FOUNDATION_EXPORT NSString* const kBassClef;
 
 @interface SuperCoolView : UIView
+
+@property CGFloat fontSize;
 
 @end

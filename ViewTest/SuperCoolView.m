@@ -12,14 +12,12 @@
 
 @implementation SuperCoolView
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-  NSLog(@"%f/%f/%f/%f", rect.origin.x, rect.origin.y, rect.size.height, rect.size.width);
   CGContextRef currentContext = UIGraphicsGetCurrentContext();
+  CGFloat height = rect.size.height;
   for (int i = 0; i < 5; ++i) {
     //define starting point
-    float yCoord = 15 + 10 * i;
+    float yCoord = 15 + ((height - 30) / 5) * i;
     CGContextMoveToPoint(currentContext, 5, yCoord);
     CGContextAddLineToPoint(currentContext, rect.size.width - 5, yCoord);
     CGContextSetLineWidth(currentContext, 1.0);
@@ -27,16 +25,12 @@
     CGContextStrokePath(currentContext);
   }
 
-  for (NSString *familyName in [UIFont familyNames]) {
-    for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
-      NSLog(@"%@", fontName);
-    }
-  }
   CGContextMoveToPoint(currentContext, 5, 0);
   NSString* trebleClef = @"\U0001D11E";
+  NSLog(@"Fontsize: %f", self.fontSize);
   NSDictionary* fontAttrs = [NSDictionary dictionaryWithObjectsAndKeys:
                              [UIColor blackColor], NSForegroundColorAttributeName,
-                             [UIFont fontWithName:@"AppleSymbols" size:96], NSFontAttributeName,
+                             [UIFont fontWithName:@"AppleSymbols" size:self.fontSize], NSFontAttributeName,
                              nil];
   [trebleClef drawAtPoint:CGPointMake(5,0) withAttributes:fontAttrs];
 }
