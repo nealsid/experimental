@@ -19,24 +19,26 @@
   CGContextRef currentContext = UIGraphicsGetCurrentContext();
   for (int i = 0; i < 5; ++i) {
     //define starting point
-    float yCoord = 5 + 20 * i;
+    float yCoord = 15 + 10 * i;
     CGContextMoveToPoint(currentContext, 5, yCoord);
     CGContextAddLineToPoint(currentContext, rect.size.width - 5, yCoord);
-    CGContextSetLineWidth(currentContext, 2.0);
+    CGContextSetLineWidth(currentContext, 1.0);
     CGContextSetStrokeColorWithColor(currentContext, [UIColor blackColor].CGColor);
     CGContextStrokePath(currentContext);
   }
 
-  CGContextMoveToPoint(currentContext, 10, 5);
-  NSString* trebleClef = @"\U0001d11e";
+  for (NSString *familyName in [UIFont familyNames]) {
+    for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
+      NSLog(@"%@", fontName);
+    }
+  }
+  CGContextMoveToPoint(currentContext, 5, 0);
+  NSString* trebleClef = @"\U0001D11E";
   NSDictionary* fontAttrs = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [UIColor redColor], NSForegroundColorAttributeName,
-                             [UIFont fontWithName:@"Arial" size:24], NSFontAttributeName,
+                             [UIColor blackColor], NSForegroundColorAttributeName,
+                             [UIFont fontWithName:@"AppleSymbols" size:96], NSFontAttributeName,
                              nil];
-  NSAttributedString* trebleAttrString = [[NSAttributedString alloc] initWithString:trebleClef
-                                                                         attributes:fontAttrs];
-  CTLineRef ct = CTLineCreateWithAttributedString((CFAttributedStringRef)trebleAttrString);
-  CTLineDraw(ct, currentContext);
+  [trebleClef drawAtPoint:CGPointMake(5,0) withAttributes:fontAttrs];
 }
 
 @end
