@@ -7,6 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
                 <outlet property="fontSizeSlider" destination="AbO-xC-eOt" id="dAW-MO-iuQ"/>
+                <outlet property="subviewFrameHeightSlider" destination="Sn4-uw-lIw" id="xXW-VI-WkU"/>
+                <outlet property="subviewHeightConstraint" destination="c9h-bI-B9X" id="Yhj-x3-ElG"/>
                 <outlet property="view" destination="iN0-l3-epB" id="efh-kB-7tk"/>
             </connections>
         </placeholder>
@@ -15,12 +17,21 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qxp-fV-ko8" customClass="SuperCoolView">
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qxp-fV-ko8" customClass="SuperCoolView">
                     <rect key="frame" x="8" y="114" width="304" height="184"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="184" id="c9h-bI-B9X"/>
+                    </constraints>
                 </view>
+                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="30" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="Sn4-uw-lIw">
+                    <rect key="frame" x="107" y="405" width="118" height="31"/>
+                    <connections>
+                        <action selector="subviewFrameSliderValueChanged:" destination="-1" eventType="valueChanged" id="wwn-v8-arc"/>
+                    </connections>
+                </slider>
                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="96" minValue="0.0" maxValue="256" translatesAutoresizingMaskIntoConstraints="NO" id="AbO-xC-eOt">
-                    <rect key="frame" x="101" y="444" width="118" height="31"/>
+                    <rect key="frame" x="107" y="433" width="118" height="31"/>
                     <connections>
                         <action selector="sliderValueChanged:" destination="-1" eventType="valueChanged" id="GEa-i1-vi6"/>
                     </connections>
@@ -28,6 +39,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="139" y="154"/>
         </view>
     </objects>
 </document>

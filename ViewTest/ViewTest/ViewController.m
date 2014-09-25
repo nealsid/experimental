@@ -13,6 +13,9 @@
 
 @property (weak, nonatomic) IBOutlet UISlider *fontSizeSlider;
 @property (weak, nonatomic) SuperCoolView* superCoolView;
+@property (weak, nonatomic) IBOutlet UISlider *subviewFrameHeightSlider;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *subviewHeightConstraint;
+
 @end
 
 @implementation ViewController
@@ -22,9 +25,22 @@
   [self.superCoolView setNeedsDisplay];
 }
 
+- (IBAction)subviewFrameSliderValueChanged:(id)sender {
+  [self.view setNeedsLayout];
+  [self.superCoolView setNeedsDisplay];
+}
+
+- (void) viewWillLayoutSubviews {
+  self.subviewHeightConstraint.constant = [self.subviewFrameHeightSlider value];
+  NSLog(@"Subview rect: %f/%f/%f/%f", self.superCoolView.frame.origin.x, self.superCoolView.frame.origin.y,
+        self.superCoolView.frame.size.width, self.superCoolView.frame.size.height);
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.superCoolView = [self.view subviews][0];
+  NSLog(@"Subview rect: %f/%f/%f/%f", self.superCoolView.frame.origin.x, self.superCoolView.frame.origin.y,
+        self.superCoolView.frame.size.width, self.superCoolView.frame.size.height);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F97C768219D49B7B00CD520B /* MusicalScale.m in Sources */ = {isa = PBXBuildFile; fileRef = F97C768119D49B7B00CD520B /* MusicalScale.m */; };
 		F9CE196819D1C2AC00846D15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CE196719D1C2AC00846D15 /* main.m */; };
 		F9CE196B19D1C2AC00846D15 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CE196A19D1C2AC00846D15 /* AppDelegate.m */; };
 		F9CE196E19D1C2AC00846D15 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CE196D19D1C2AC00846D15 /* ViewController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F97C768019D49B7B00CD520B /* MusicalScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicalScale.h; sourceTree = "<group>"; };
+		F97C768119D49B7B00CD520B /* MusicalScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicalScale.m; sourceTree = "<group>"; };
 		F9CE196219D1C2AC00846D15 /* ViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9CE196619D1C2AC00846D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9CE196719D1C2AC00846D15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 			children = (
 				F9CE198F19D1C7A100846D15 /* SuperCoolView.h */,
 				F9CE199019D1C7A100846D15 /* SuperCoolView.m */,
+				F97C768019D49B7B00CD520B /* MusicalScale.h */,
+				F97C768119D49B7B00CD520B /* MusicalScale.m */,
 				F9CE196919D1C2AC00846D15 /* AppDelegate.h */,
 				F9CE196A19D1C2AC00846D15 /* AppDelegate.m */,
 				F9CE196C19D1C2AC00846D15 /* ViewController.h */,
@@ -227,6 +232,7 @@
 				F9CE196E19D1C2AC00846D15 /* ViewController.m in Sources */,
 				F9CE199119D1C7A100846D15 /* SuperCoolView.m in Sources */,
 				F9CE196B19D1C2AC00846D15 /* AppDelegate.m in Sources */,
+				F97C768219D49B7B00CD520B /* MusicalScale.m in Sources */,
 				F9CE196819D1C2AC00846D15 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
